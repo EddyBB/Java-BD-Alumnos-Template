@@ -28,13 +28,14 @@ public class Main {
 			
 			Statement sentencia = conexion.createStatement();
 			
+			sentencia.executeUpdate("INSERT INTO libro VALUES ('libro5','123096789','NOVELA','autor4',200)");
+			
 			ResultSet rs = sentencia.executeQuery(sql);
 			
 			while(rs.next()) {
-				System.out.println(rs.getString(1));
+				System.out.println(rs.getString(1) + ", " + rs.getString(2) + ", " + rs.getString(3) + ", " + rs.getString(4) + ", " + rs.getString(5));
 			}
-		
-		
+			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
